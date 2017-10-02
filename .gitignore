@@ -8,3 +8,4 @@
 !scripts/incron_config.sh
 !sudoers
 !apt/sources.list
+!apt/apt.conf.d/50unattended-upgrades
