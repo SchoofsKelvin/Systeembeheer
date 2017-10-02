@@ -7,3 +7,4 @@
 !scripts/backup.sh
 !scripts/incron_config.sh
 !sudoers
+!apt/sources.list
