@@ -1,4 +1,4 @@
-deb http://ftp.debian.org/debian stretch main contrib
+deb http://ftp.debian.org/debian stable main contrib
 
 deb http://ftp.debian.org/debian stretch-updates main contrib
 
