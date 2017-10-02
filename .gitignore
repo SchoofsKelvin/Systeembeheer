@@ -6,3 +6,4 @@
 !default/locale
 !scripts/backup.sh
 !scripts/incron_config.sh
+!sudoers
