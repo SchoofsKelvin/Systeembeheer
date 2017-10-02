@@ -3,3 +3,4 @@
 
 !ssh/*
 !default/ssh
+!default/locale
