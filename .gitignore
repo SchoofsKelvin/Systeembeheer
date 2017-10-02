@@ -4,3 +4,5 @@
 !ssh/*
 !default/ssh
 !default/locale
+!scripts/backup.sh
+!scripts/incron_config.sh
