@@ -54,5 +54,4 @@ Host *
     HashKnownHosts yes
     GSSAPIAuthentication yes
 
-	UseDNS no
 	PubkeyAuthentication yes
