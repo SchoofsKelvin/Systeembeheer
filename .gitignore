@@ -9,3 +9,4 @@
 !sudoers
 !apt/sources.list
 !apt/apt.conf.d/50unattended-upgrades
+!sshguard/*
