@@ -11,3 +11,4 @@
 !apt/apt.conf.d/50unattended-upgrades
 !sshguard/*
 !crontab
+!ntp.conf
