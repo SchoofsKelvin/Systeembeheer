@@ -13,7 +13,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 41 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
 2 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 
-0 3 * * * root /usr/bin/apt-get upgrade -q -y
+0 3 * * * root /usr/bin/apt-get update && /usr/bin/apt-get upgrade -q -y
 
 
 #
