@@ -14,3 +14,4 @@
 !ntp.conf
 !bind/*
 !network/*
+!ethers
