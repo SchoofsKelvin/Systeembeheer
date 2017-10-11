@@ -13,3 +13,4 @@
 !crontab
 !ntp.conf
 !bind/*
+!network/*
