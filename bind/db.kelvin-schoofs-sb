@@ -8,7 +8,6 @@ $TTL	200; 86400
 			  86400		; Retry
 			    200; 2419200		; Expire
 			  86400 )	; Negative Cache TTL
-
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 ns	IN	A	193.191.177.160
 www	IN	A	193.191.177.160
