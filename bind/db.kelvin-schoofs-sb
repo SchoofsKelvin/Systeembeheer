@@ -6,7 +6,7 @@ $TTL	200; 86400
 			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry
-			    200; 2419200		; Expire
+			    200		; Expire
 			  86400 )	; Negative Cache TTL
 ;
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
