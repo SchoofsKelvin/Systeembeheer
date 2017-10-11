@@ -1,15 +1,13 @@
 ; BIND reverse data file for empty rfc1918 zone
 ;
 ;
-
-
 $TTL	200; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. (
-			      1		; Serial
-			 604800		; Refresh
-			  86400		; Retry
-			    200; 2419200		; Expire
-			  86400 )	; Negative Cache TTL
+                0   ; serial
+                3H  ; refresh
+                1H  ; retry
+                1W  ; expire
+                3H )    ; minimum
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 ns	IN	A	193.191.177.160
 www	IN	A	193.191.177.160
