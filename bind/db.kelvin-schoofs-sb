@@ -11,5 +11,3 @@ $TTL	200; 86400
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 ns	IN	A	193.191.177.160
 www	IN	A	193.191.177.160
-
-box	IN	A	8.8.8.8
