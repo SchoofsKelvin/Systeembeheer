@@ -2,7 +2,7 @@
 ;
 ;
 $TTL	200; 86400
-@	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. root.kelvin-schoofs.sb.uclllabs.be. (
+@	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. (
 			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry
@@ -11,5 +11,6 @@ $TTL	200; 86400
 ;
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 ns	IN	A	193.191.177.160
+www	IN	A	193.191.177.160
 
 box	IN	A	8.8.8.8
