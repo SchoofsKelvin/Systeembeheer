@@ -3,7 +3,7 @@
 ;
 $TTL	200; 86400
 @	IN	SOA	kelvin-schoofs.sb.uclllabs.be. sb.uclllabs.be. (
-                1   ; serial
+                2   ; serial
                 604800  ; refresh
                 86400  ; retry
                 1  ; expire
