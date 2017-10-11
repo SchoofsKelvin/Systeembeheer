@@ -3,11 +3,11 @@
 ;
 $TTL	200; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. (
-                0   ; serial
-                3H  ; refresh
-                1H  ; retry
-                1W  ; expire
-                3H )    ; minimum
+                1   ; serial
+                604800  ; refresh
+                86400  ; retry
+                1  ; expire
+                604800 )    ; minimum
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 ns	IN	A	193.191.177.160
 www	IN	A	193.191.177.160
