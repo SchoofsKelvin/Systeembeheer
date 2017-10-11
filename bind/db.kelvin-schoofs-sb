@@ -2,7 +2,7 @@
 ;
 ;
 $TTL	200; 86400
-@	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. (
+@	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. kelvin-schoofs.sb.uclllabs.be. (
                 1   ; serial
                 604800  ; refresh
                 86400  ; retry
