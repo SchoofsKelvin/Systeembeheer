@@ -15,3 +15,5 @@
 !bind/*
 !network/*
 !ethers
+!hosts
+
