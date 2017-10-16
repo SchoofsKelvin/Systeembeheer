@@ -53,7 +53,7 @@ Host *
     SendEnv LANG LC_*
     HashKnownHosts yes
     GSSAPIAuthentication yes
-	ClientAliveInterval 30
-	ClientAliveCountMax 0
+#   ClientAliveInterval 30
+#   ClientAliveCountMax 0
 
 	PubkeyAuthentication yes
