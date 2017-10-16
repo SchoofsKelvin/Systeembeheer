@@ -7,7 +7,7 @@
 //include "/etc/bind/zones.rfc1918";
 
 
-zone "ns.kelvin-schoofs.sb.uclllabs.be" {
+zone "kelvin-schoofs.sb.uclllabs.be" {
 	type master;
 	file "/etc/bind/db.kelvin-schoofs-sb";
 };
