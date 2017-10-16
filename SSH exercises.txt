@@ -1,0 +1,22 @@
+1.	scp -P 22345 backup-systeembeheer.sh root@193.191.177.160:/tmp/leia
+2.	Passwordless login enabled, ssh-copy-id used from Leia
+3.	scp -P 22345 -r root@193.191.177.160:/etc etc-scp
+4.	[ Not on LDAP machine ]
+5.	[ See /etc/hosts ]
+6.	[ Used in backup-systeembeheer.sh on Leia ]
+7.	ssh systeembeheer ls [ Ran from Leia ]
+8.	[ Not on LDAP machine ]
+9.	[ Not on a graphical linux machine ]
+10.	ssh -f systeembeheer -L 63123:193.191.177.160:22345 -N [ Ran from Leia ]
+	ssh -p 63123 root@127.0.0.1 [ Ran from Leia ]
+11. [ Configured ]
+12.	[ Website not given ]
+13.	[ Done on Leia ]
+		Host sb_tunnel
+			Hostname 193.191.177.160
+			Port 22345
+			User root
+			LocalForward 63123 193.191.177.160:22345
+	=> ssh -f -N sb_tunnel
+14.	[ Done from Leia to Systeembeheer ]
+15.	[ Not on a linux machine and sshfs not installed on Leia ]
