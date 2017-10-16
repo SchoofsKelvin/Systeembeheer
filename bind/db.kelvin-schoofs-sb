@@ -3,11 +3,11 @@
 ;
 $TTL	1; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. root.kelvin-schoofs. (
-                5   ; serial
-                604800  ; refresh
-                86400  ; retry
+                6   ; serial
+                30  ; refresh
+                30  ; retry
                 30  ; expire
-                604800 )    ; minimum
+                30 )    ; minimum
 ; Name servers
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 @	IN	NS	ns1.uclllabs.be.
