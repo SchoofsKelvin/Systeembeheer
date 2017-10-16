@@ -21,6 +21,7 @@ options {
 	dnssec-validation auto;
 	allow-query { any; };
 	allow-transfer { none; };
+	allow-recursion { any; };
 	recursion no;
 
 	auth-nxdomain no;    # conform to RFC1035
