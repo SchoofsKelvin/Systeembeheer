@@ -22,6 +22,7 @@ options {
 	allow-query { any; };
 	allow-transfer { none; };
 	allow-recursion { any; };
+	allow-query-cache { any; };
 	recursion no;
 
 	auth-nxdomain no;    # conform to RFC1035
