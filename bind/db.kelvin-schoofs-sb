@@ -3,7 +3,7 @@
 ;
 $TTL	1; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. root.kelvin-schoofs. (
-                6   ; serial
+                7   ; serial
                 30  ; refresh
                 30  ; retry
                 30  ; expire
