@@ -54,5 +54,6 @@ Host *
     HashKnownHosts yes
     GSSAPIAuthentication yes
 	ClientAliveInterval 30
+	ClientAliveCountMax 0
 
 	PubkeyAuthentication yes
