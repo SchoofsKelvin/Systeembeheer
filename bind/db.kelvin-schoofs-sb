@@ -10,9 +10,9 @@ $TTL	1; 86400
                 604800 )    ; minimum
 ; Name servers
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
-@	IN	NS	ns1.uclllabs.be
-@	IN	NS	ns2.uclllabs.be
-@	IN	NS	ns.tibo-claesens.sb.uclllabs.be
+@	IN	NS	ns1.uclllabs.be.
+@	IN	NS	ns2.uclllabs.be.
+@	IN	NS	ns.tibo-claesens.sb.uclllabs.be.
 ; A records
 @	IN	A	193.191.177.160
 ns	IN	A	193.191.177.160
