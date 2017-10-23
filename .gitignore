@@ -12,3 +12,4 @@
 !sshguard/*
 !crontab
 !ntp.conf
+!bind/*
