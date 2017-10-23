@@ -1,9 +1,9 @@
 ; BIND reverse data file for empty rfc1918 zone
 ;
 ;
-$TTL	1; 86400
+$TTL	30; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. root.kelvin-schoofs. (
-                7   ; serial
+                8   ; serial
                 30  ; refresh
                 30  ; retry
                 30  ; expire
