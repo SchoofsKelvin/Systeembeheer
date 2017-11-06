@@ -52,6 +52,7 @@ local template = [[
 db:write(template:format(vhost,vhost,vhost,vhost))
 db:close()
 
+os.execute("mkdir /var/www/"..vhost)
 local index = io.open("/var/www/"..vhost.."/index.html","w")
 index:write("Webpage for vHost ",vhost)
 index:close()
