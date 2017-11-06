@@ -9,6 +9,7 @@
 !scripts/cmdutil.lua
 !scripts/dns_add_zone
 !scripts/dns_add_record
+!scripts/http_add_vhost
 !sudoers
 !apt/sources.list
 !apt/apt.conf.d/50unattended-upgrades

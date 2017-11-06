@@ -1,0 +1,70 @@
+#!/usr/bin/lua
+
+-- Find cmdutil.lua from anywhere on server
+package.path = package.path..";/etc/scripts/?.lua"
+
+--[[
+	FLOW
+	- Add block to /etc/apache2/sites-available/001-custom.conf
+		Check for already existing vhost
+	- Make /var/www/<NAME> and add some default index.html
+]]
+
+local gen = require("cmdutil")
+gen = gen({t=1})
+
+local args = gen(...)
+
+local vhost = args[1]
+
+if not vhost then
+	io.stdout:write("Usage: http_add_vhost <vhost>\n")
+	io.stdout:write("	Add flag -r to skip apache2 reload\n")
+	io.stdout:write("Example: http_add_vhost www3.kelvin-schoofs.sb.uclllabs.be\n")
+	return
+end
+
+-- TODO: Properly check if existing domain
+assert(zone:find("^%w+%.[%-%.%w]*%w$"),"Invalid domain")
+
+local db = assert(io.open("/etc/apache2/sites-available/001-custom.conf","a+"))
+
+local toFind = "ServerName%s+"..vhost:gsub("%W","%%%0")
+for line in db:lines() do
+	if line:lower():find(toFind) then
+		return print("vHost already exists")
+	end
+end
+
+local template = [[
+<VirtualHost *:80>
+	ServerName %s
+
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/%s
+
+	ErrorLog ${APACHE_LOG_DIR}/%s-error.log
+	CustomLog ${APACHE_LOG_DIR}/%s-access.log combined
+
+</VirtualHost>
+]]
+
+db:write(template:format(vhost,vhost,vhost,vhost))
+db:close()
+
+local index = io.open("/var/www/"..vhost.."/index.html","w")
+index:write("Webpage for vHost ",vhost)
+index:close()
+
+print("Added vHost "..vhost)
+
+if args.r then return end
+print("Reloading apache2...")
+
+local f = io.popen("service apache2 reload")
+for line in f:lines() do
+	print(line)
+end
+f = io.popen("service bind9 status")
+for line in f:lines() do
+	print(line)
