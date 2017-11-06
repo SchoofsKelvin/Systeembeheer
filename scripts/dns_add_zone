@@ -62,6 +62,8 @@ $TTL	30; 86400
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 @	IN	NS	ns1.uclllabs.be.
 @	IN	NS	ns2.uclllabs.be.
+; Other records
+@	IN	A	193.191.177.160
 ]]):format(zone,zone))
 db:close()
 
