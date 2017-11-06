@@ -3,7 +3,7 @@
 ;
 $TTL	30; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. schoofskelvin.gmail.com. (
-                12   ; serial
+                15   ; serial
                 30  ; refresh
                 30  ; retry
                 30  ; expire
@@ -16,6 +16,8 @@ $TTL	30; 86400
 @	IN	A	193.191.177.160
 ns	IN	A	193.191.177.160
 www	IN	A	193.191.177.160
-test IN	A	193.191.177.254
+test	IN	A	193.191.177.254
 .	IN	A	193.191.177.160
 testzone	IN	NS	ns.testzone.kelvin-schoofs.sb.uclllabs.be
+www1	IN	CNAME	www
+www2	IN	CNAME	www
