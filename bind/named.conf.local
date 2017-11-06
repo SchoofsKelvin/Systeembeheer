@@ -9,7 +9,7 @@
 
 zone "kelvin-schoofs.sb.uclllabs.be" {
 	type master;
-	file "/etc/bind/db.kelvin-schoofs-sb";
+	file "/etc/bind/db.kelvin-schoofs.sb.uclllabs.be";
 	allow-transfer {
 		193.191.177.254; // mrt
 		193.191.176.254; // ns1.uclllabs.be
