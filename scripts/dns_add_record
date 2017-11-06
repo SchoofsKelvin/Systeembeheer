@@ -1,0 +1,66 @@
+#!/usr/bin/lua
+
+-- Find cmdutil.lua from anywhere on server
+package.path = package.path..";/etc/scripts/?.lua"
+
+local gen = require("cmdutil")
+gen = gen({t=1})
+
+local args = gen(...)
+
+local t = (args.t and args.t[1] or "A"):upper()
+local name,value,zone = args[1],args[2],args[3]
+
+if not zone then
+	io.stdout:write("Usage: dns_add_record [ -t A ] <key> <value> <zone>\n")
+	io.stdout:write("	Add flag -r to skip bind9 restart\n")
+	io.stdout:write("Example: dns_add_record -t MX mail 1.2.3.4 zone2.domain.com\n")
+	return
+end
+
+local db,e = io.open("/etc/bind/db."..zone,"r")
+if not db and e:find("No such file") then
+	error("Couldn't find /etc/bind/db."..zone,0)
+elseif not db then
+	error("Couldn't open /etc/bind/db."..zone..": "..tostring(e),0)
+end
+
+local lines = {}
+for line in db:lines() do
+	lines[#lines+1] = line
+end
+
+for k,line in pairs(lines) do
+	local a,b,c = line:match("(%S+)%s+IN%s+(%S+)%s+(%S+)")
+	if a then
+		if a:lower() == name:lower() and
+			c:lower() == value:lower() and
+			b:upper() == t then
+			print("Entry already found: "..line)
+			return
+		end
+	elseif line:find("serial") then
+		lines[k] = line:gsub("%d+",function(n) return n+1 end)
+	end
+end
+
+db = io.open("/etc/bind/db."..zone,"w")
+for k,line in pairs(lines) do db:write(line,"\n") end
+
+local entry = ("%s\tIN\t%s\t%s\n"):format(name,t,value)
+
+db:write(entry) db:close()
+
+print("Added entry '"..entry.."'")
+
+if args.r then return end
+print("Restarting bind9...")
+
+local f = io.popen("service bind9 reload")
+for line in f:lines() do
+	print(line)
+end
+f = io.popen("service bind9 status")
+for line in f:lines() do
+	print(line)
+end

@@ -1,0 +1,85 @@
+#!/usr/bin/lua
+
+-- Find cmdutil.lua from anywhere on server
+package.path = package.path..";/etc/scripts/?.lua"
+
+local gen = require("cmdutil")
+gen = gen({t=1})
+
+local args = gen(...)
+
+local zone = args[1]
+
+if not zone then
+	io.stdout:write("Usage: dns_add_zone <zone>\n")
+	io.stdout:write("	Add flag -r to skip bind9 restart\n")
+	io.stdout:write("Example: dns_add_zone testzone.domain.com\n")
+	return
+end
+
+assert(zone:find("^%w+%.[%-%.%w]*%w$"),"Invalid zone")
+
+local db = assert(io.open("/etc/bind/named.conf.local","a+"))
+
+-- zone "kelvin-schoofs.sb.uclllabs.be" {
+for line in db:lines() do
+	if line:find('zone%s+"'..zone..'"%s+{') then
+		return print("Zone already exists")
+	end
+end
+
+local template = [[
+zone "%s" {
+	type master;
+	file "/etc/bind/db.%s";
+	allow-transfer {
+		193.191.177.254; // mrt
+		193.191.176.254; // ns1.uclllabs.be
+		193.191.177.4; // ns2.uclllabs.be
+		193.191.177.180; // ns.tibo-claesens.sb.uclllabs.be
+		193.191.177.160; // ns.kelvin-schoofs.sb.uclllabs.be
+	};
+};
+]]
+
+db:write(template:format(zone,zone))
+db:close()
+
+db = assert(io.open("/etc/bind/db."..zone,"w"))
+db:write(([[
+; BIND reverse data file for empty rfc1918 zone
+;
+;
+$TTL	30; 86400
+@	IN	SOA	ns.%s. schoofskelvin.gmail.com. (
+                11   ; serial
+                30  ; refresh
+                30  ; retry
+                30  ; expire
+                30 )    ; minimum
+; Name servers
+@	IN	NS	ns.%s
+@	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
+@	IN	NS	ns1.uclllabs.be.
+@	IN	NS	ns2.uclllabs.be.
+]]):format(zone,zone))
+db:close()
+
+print("Added zone, adding zone entry to kelvin-schoofs.sb.uclllabs.be now")
+local cmd = "dns_add_record -r -t NS %s ns.%s kelvin-schoofs.sb.uclllabs.be"
+local e = os.execute(cmd:format(zone:match("[^%.]+"),zone))
+if e ~= 0 then error("dns_add_record returned "..tostring(e),0) end
+
+print("Added zone "..zone.." and its entry")
+
+if args.r then return end
+print("Restarting bind9...")
+
+local f = io.popen("service bind9 reload")
+for line in f:lines() do
+	print(line)
+end
+f = io.popen("service bind9 status")
+for line in f:lines() do
+	print(line)
+end

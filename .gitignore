@@ -6,6 +6,9 @@
 !default/locale
 !scripts/backup.sh
 !scripts/incron_config.sh
+!scripts/cmdutil.lua
+!scripts/dns_add_zone
+!scripts/dns_add_record
 !sudoers
 !apt/sources.list
 !apt/apt.conf.d/50unattended-upgrades
