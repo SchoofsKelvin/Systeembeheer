@@ -58,7 +58,7 @@ $TTL	30; 86400
                 30  ; expire
                 30 )    ; minimum
 ; Name servers
-@	IN	NS	ns.%s
+@	IN	NS	ns.%s.
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 @	IN	NS	ns1.uclllabs.be.
 @	IN	NS	ns2.uclllabs.be.
