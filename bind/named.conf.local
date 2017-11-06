@@ -17,14 +17,3 @@ zone "kelvin-schoofs.sb.uclllabs.be" {
 		193.191.177.180; // ns.tibo-claesens.sb.uclllabs.be
 	};
 };
-zone "testzone.kelvin-schoofs.sb.uclllabs.be" {
-	type master;
-	file "/etc/bind/db.testzone.kelvin-schoofs.sb.uclllabs.be";
-	allow-transfer {
-		193.191.177.254; // mrt
-		193.191.176.254; // ns1.uclllabs.be
-		193.191.177.4; // ns2.uclllabs.be
-		193.191.177.180; // ns.tibo-claesens.sb.uclllabs.be
-		193.191.177.160; // ns.kelvin-schoofs.sb.uclllabs.be
-	};
-};
