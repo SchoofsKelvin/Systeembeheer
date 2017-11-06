@@ -27,3 +27,4 @@ root	ALL=(ALL:ALL) ALL
 #includedir /etc/sudoers.d
 
 check ALL = (root:root) NOPASSWD: /usr/lib/nagios/plugins/check_apt, /usr/sbin/arp
+check ALL = (root:root) NOPASSWD: /etc/scripts/dns_add_zone, /etc/scripts/dns_add_record
