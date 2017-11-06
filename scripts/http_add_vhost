@@ -62,9 +62,7 @@ if args.r then return end
 print("Reloading apache2...")
 
 local f = io.popen("service apache2 reload")
-for line in f:lines() do
-	print(line)
-end
-f = io.popen("service bind9 status")
-for line in f:lines() do
-	print(line)
+for line in f:lines() do print(line) end
+
+f = io.popen("service apache2 status")
+for line in f:lines() do print(line) end
