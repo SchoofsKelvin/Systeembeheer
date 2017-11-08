@@ -3,7 +3,7 @@
 ;
 $TTL	30; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. schoofskelvin.gmail.com. (
-                16   ; serial
+                23  ; serial
                 30  ; refresh
                 30  ; retry
                 30  ; expire
@@ -22,3 +22,11 @@ testzone	IN	NS	ns.testzone.kelvin-schoofs.sb.uclllabs.be
 www1	IN	CNAME	www
 www2	IN	CNAME	www
 www3	IN	CNAME	www
+secure	IN	A	193.191.177.160
+supersecure	IN	A	193.191.177.160
+mx	IN	A	193.191.177.160
+@	IN	MX	10 mx
+@	IN	CAA	0 issue "digicert.com"
+@	IN	CAA	0 issue "letsencrypt.org"
+@	IN	CAA	0 issuewild ";"
+@	IN	CAA	0 iodef "malto:schoofs.kelvin@gmail.com"
