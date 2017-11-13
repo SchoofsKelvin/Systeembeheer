@@ -3,7 +3,7 @@
 ;
 $TTL	30; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. schoofskelvin.gmail.com. (
-                23  ; serial
+                24  ; serial
                 30  ; refresh
                 30  ; retry
                 30  ; expire
@@ -12,6 +12,7 @@ $TTL	30; 86400
 @	IN	NS	ns.kelvin-schoofs.sb.uclllabs.be.
 @	IN	NS	ns1.uclllabs.be.
 @	IN	NS	ns2.uclllabs.be.
+@	IN	NS	ns.carl-vanderwegen.sb.uclllabs.be.
 ; A records
 @	IN	A	193.191.177.160
 ns	IN	A	193.191.177.160
