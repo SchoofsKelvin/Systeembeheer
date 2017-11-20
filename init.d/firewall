@@ -1,0 +1,31 @@
+#!/bin/bash
+
+function stop() {
+	echo "Clearing iptables...";
+	iptables -F INPUT;
+	iptables -F OUTPUT;
+	ip6tables -F INPUT;
+	ip6tables -F OUTPUT;
+}
+
+function start() {
+	echo "Filling iptables...";
+	iptables-restore /etc/network/iptables.rules
+	ip6tables-restore /etc/network/ip6tables.rules	
+}
+
+case $1 in
+start)
+	start
+	;;
+stop)
+	stop
+	;;
+restart)
+	stop
+	start
+	;;
+*)
+	echo $"Usage: $0 {start|stop|restart}";
+	exit 1;
+esac

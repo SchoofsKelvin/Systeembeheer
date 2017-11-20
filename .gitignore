@@ -25,3 +25,4 @@
 !apache2/**
 !courier/**
 !postfix/**
+!init.d/firewall
