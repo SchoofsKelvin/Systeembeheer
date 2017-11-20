@@ -52,7 +52,7 @@ db:write(([[
 ;
 $TTL	30; 86400
 @	IN	SOA	ns.%s. schoofskelvin.gmail.com. (
-                11   ; serial
+                20   ; serial
                 30  ; refresh
                 30  ; retry
                 30  ; expire
