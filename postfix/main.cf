@@ -22,7 +22,7 @@ mydestination = localhost
 #mydestination = $myhostname, localhost.$mydomain, localhost
 relayhost = 
 mynetworks = 127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
-inet_interfaces = 127.0.0.1, 193.191.177.160
+inet_interfaces = 127.0.0.1, 193.191.177.160, 2001:6a8:2880:a077::160
 recipient_delimiter = +
 
 myorigin = kelvin-schoofs.sb.uclllabs.be
