@@ -3,7 +3,7 @@
 ;
 $TTL	30; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. schoofskelvin.gmail.com. (
-                24  ; serial
+                26  ; serial
                 30  ; refresh
                 30  ; retry
                 30  ; expire
@@ -31,3 +31,5 @@ mx	IN	A	193.191.177.160
 @	IN	CAA	0 issue "letsencrypt.org"
 @	IN	CAA	0 issuewild ";"
 @	IN	CAA	0 iodef "malto:schoofs.kelvin@gmail.com"
+@	IN	AAAA	2001:6a8:2880:a077::160
+ns	IN	AAAA	2001:6a8:2880:a077::160

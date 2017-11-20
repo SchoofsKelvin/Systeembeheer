@@ -8,3 +8,7 @@ iface eth0 inet static
 	gateway 193.191.177.254
 	post-up arp -f /etc/ethers
 
+iface eth0 inet6 static
+	address 2001:6a8:2880:a077::160
+	netmask 64
+	gateway 2001:6a8:2880:a077::1
