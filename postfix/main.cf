@@ -1,0 +1,30 @@
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+biff = no
+
+# appending .domain is the MUA's job.
+append_dot_mydomain = no
+
+# Uncomment the next line to generate "delayed mail" warnings
+#delay_warning_time = 4h
+
+virtual_mailbox_base = /var/vmail/
+virtual_mailbox_maps = hash:/etc/postfix/vmailbox
+virtual_mailbox_domains = $myhostname
+virtual_minimum_uid = 8
+virtual_uid_maps = static:8
+virtual_gid_maps = static:8
+local_recipient_maps = $virtual_mailbox_maps
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+mydestination = localhost
+#mydestination = $myhostname, localhost.$mydomain, localhost
+relayhost = 
+mynetworks = 127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
+inet_interfaces = 127.0.0.1, 193.191.177.160
+recipient_delimiter = +
+
+myorigin = kelvin-schoofs.sb.uclllabs.be
+myhostname = kelvin-schoofs.sb.uclllabs.be
+relay_domains = localhost, kelvin-schoofs.sb.uclllabs.be
