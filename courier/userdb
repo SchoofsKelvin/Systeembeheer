@@ -1,0 +1,3 @@
+user2@kelvin-schoofs.sb.uclllabs.be	uid=mail|mail=/var/vmail/user2|gid=mail|home=/home/vhosts/kelvin-schoofs.sb.uclllabs.be/user2|systempw=$1$3UOIC8AM$1gUPm0eIMkioFOP6TYBsX.
+user1@kelvin-schoofs.sb.uclllabs.be	uid=mail|mail=/var/vmail/user1|gid=mail|systempw=$1$o5q34vJf$3o9N5fJQF0Gnr6c5D3Q3t.|home=/home/vhosts/kelvin-schoofs.sb.uclllabs.be/user1
+check@kelvin-schoofs.sb.uclllabs.be	uid=mail|systempw=$1$zTGzLWn.$UXTyvKNbgZmQl4EY7rS.8/|mail=/var/vmail/check|home=/home/vhosts/kelvin-schoofs.sb.uclllabs.be/check|gid=mail
