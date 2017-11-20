@@ -3,7 +3,7 @@
 ;
 $TTL	30; 86400
 @	IN	SOA	ns.kelvin-schoofs.sb.uclllabs.be. schoofskelvin.gmail.com. (
-                35  ; serial
+                40  ; serial
                 30  ; refresh
                 30  ; retry
                 30  ; expire
