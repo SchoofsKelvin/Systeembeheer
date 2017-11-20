@@ -68,11 +68,11 @@ ns	IN	A	193.191.177.160
 db:close()
 
 print("Added zone, adding zone entry to kelvin-schoofs.sb.uclllabs.be now")
-local cmd = "dns_add_record -r -t NS %s ns.%s kelvin-schoofs.sb.uclllabs.be"
+local cmd = "dns_add_record -r -t NS %s ns.%s kelvin-schoofs.sb.uclllabs.be."
 local e = os.execute(cmd:format(zone:match("[^%.]+"),zone))
 if e ~= 0 then error("dns_add_record returned "..tostring(e),0) end
 
-local cmd = "dns_add_record -r %s %s kelvin-schoofs.sb.uclllabs.be"
+local cmd = "dns_add_record -r %s %s kelvin-schoofs.sb.uclllabs.be."
 local e = os.execute(cmd:format(zone:match("[^%.]+"),zone))
 if e ~= 0 then error("dns_add_record returned "..tostring(e),0) end
 
